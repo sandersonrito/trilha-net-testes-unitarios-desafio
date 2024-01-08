@@ -29,5 +29,17 @@ namespace TestesUnitarios.Desafio.Console.Services
         {
             return lista.Min();
         }
+
+        public List<int> RetornarListaNumerosImpares(List<int> lista)
+        {
+            var listaDeNumerosImpares = lista.Where (x => x % 2 != 0);
+            return listaDeNumerosImpares.ToList();
+        }
+
+        public List<int> RetornarListaNumerosPares(List<int> lista)
+        {
+            var listaDeNumerosPares = lista.Where (x => x % 2 == 0);
+            return listaDeNumerosPares.ToList();
+        }
     }
 }

@@ -19,5 +19,13 @@ namespace TestesUnitarios.Desafio.Console.Services
             var termina = texto.EndsWith(textoProcurado);
             return termina;
         }
+
+        public List<char> RecebeUmTextoETransformaEleEmUmaListaDeCaracteres(string texto)
+        {   
+            
+            var listaCaracteres = texto.ToCharArray().ToList();
+            return listaCaracteres;
+        }
+
     }
 }

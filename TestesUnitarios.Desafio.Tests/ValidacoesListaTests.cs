@@ -88,4 +88,32 @@ public class ValidacoesListaTests
         // Assert
         Assert.Equal(-8, resultado);
     }
+
+    [Fact]
+    public void DeveRetornarUmaListaComOsNumerosImpares()
+    {
+        // Arrange
+        var lista = new List<int> { 5, -1, -8, 3, 6, 9, 12 };
+        var listaEsperada = new List<int> { 5, -1, 3, 9 };
+
+        // Act
+        var resultado = _validacoes.RetornarListaNumerosImpares(lista);
+
+        // Assert
+        Assert.Equal(listaEsperada, resultado);
+    }
+
+    [Fact]
+    public void DeveRetornarUmaListaComOsNumerosPares()
+    {
+        // Arrange
+        var lista = new List<int> { 5, -1, -8, 3, 6, 9, 12 };
+        var listaEsperada = new List<int> { -8, 6, 12 };
+
+        // Act
+        var resultado = _validacoes.RetornarListaNumerosPares(lista);
+
+        // Assert
+        Assert.Equal(listaEsperada, resultado);
+    }
 }

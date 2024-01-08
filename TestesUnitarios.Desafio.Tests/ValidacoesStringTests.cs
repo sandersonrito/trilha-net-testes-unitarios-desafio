@@ -51,8 +51,6 @@ public class ValidacoesStringTests
     [Fact]
     public void TextoDeveTerminarComAPalavraProcurado()
     {
-        //TODO: Corrigir a variável "textoProcurado" seção Arrange
-
         // Arrange
         var texto = "Começo, meio e fim do texto procurado";
         var textoProcurado = "procurado";
@@ -63,4 +61,20 @@ public class ValidacoesStringTests
         // Assert
         Assert.True(resultado);
     }
+
+    [Fact]
+    public void DeveReceberUmTextoETransformarEleEmUmaListaDeCaracteres()
+    {
+        // Arrange
+        var texto = "Sanderson";
+        var listaEsperada = new List<char> { 'S', 'a', 'n', 'd', 'e', 'r', 's', 'o', 'n'};
+
+        // Act
+        var resultado = _validacoes.RecebeUmTextoETransformaEleEmUmaListaDeCaracteres(texto);
+           
+        // Assert
+        Assert.Equal(resultado, listaEsperada);
+    }
+
+    
 }
